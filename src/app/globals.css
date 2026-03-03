@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #0d0d0d;
+  --bg-card: #111111;
+  --accent-yellow: #f5c518;
+  --accent-gold: #d4a017;
+  --accent-amber: #fbbf24;
+  --accent-neon: #ffe066;
+  --text-primary: #f5f5f5;
+  --text-muted: #9ca3af;
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #f5c518;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fbbf24;
+}
+
+/* Yellow glow utility */
+.glow-yellow {
+  box-shadow: 0 0 20px rgba(245, 197, 24, 0.3), 0 0 60px rgba(245, 197, 24, 0.1);
+}
+
+.glow-yellow-sm {
+  box-shadow: 0 0 10px rgba(245, 197, 24, 0.2);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #f5c518, #fbbf24, #ffe066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(245, 197, 24, 0.25), 0 20px 40px rgba(0, 0, 0, 0.4);
+}
