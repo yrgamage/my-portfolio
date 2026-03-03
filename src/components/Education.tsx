@@ -46,7 +46,7 @@ export default function Education() {
                 <div className="relative">
                     {/* Vertical line */}
                     <div
-                        className="absolute left-6 top-0 bottom-0 w-px md:left-1/2"
+                        className="absolute left-6 md:left-8 top-0 bottom-0 w-px"
                         style={{
                             background:
                                 "linear-gradient(to bottom, rgba(245,197,24,0.5), rgba(245,197,24,0.1))",
@@ -57,24 +57,20 @@ export default function Education() {
                         {education.map((edu, i) => (
                             <motion.div
                                 key={edu.id}
-                                initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+                                initial={{ opacity: 0, x: 40 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                                className={`relative flex flex-col md:flex-row items-start gap-6 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                                    }`}
+                                className="relative flex flex-col items-start gap-6"
                             >
                                 {/* Timeline dot */}
-                                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-yellow-400 bg-black z-10">
+                                <div className="absolute left-6 md:left-8 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-yellow-400 bg-black z-10 mt-6 md:mt-8">
                                     <div className="w-2 h-2 rounded-full bg-yellow-400 m-0.5" />
                                 </div>
 
-                                {/* Spacer for center alignment */}
-                                <div className="hidden md:block w-1/2" />
-
                                 {/* Card */}
                                 <div
-                                    className="ml-14 md:ml-0 md:w-1/2 rounded-2xl p-6 card-hover cursor-default"
+                                    className="ml-14 md:ml-20 w-[calc(100%-3.5rem)] md:w-[calc(100%-5rem)] rounded-2xl p-6 card-hover cursor-default"
                                     style={{
                                         background: "rgba(17,17,17,0.95)",
                                         border: "1px solid rgba(245,197,24,0.15)",
